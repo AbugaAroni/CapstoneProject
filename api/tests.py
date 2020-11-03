@@ -1,7 +1,8 @@
 from django.test import TestCase
 from django.db import models
-from .models import education, job
+from .models import education, job, pictures
 
+# Create your tests here.
 class EducationTestClass(TestCase):
         # Set up method
     def setUp(self):
@@ -9,7 +10,7 @@ class EducationTestClass(TestCase):
     # Testing  instance
     def test_instance(self):
         self.assertTrue(isinstance(self.abugaeducate,education))
-# Create your tests here.
+
 class JobTestClass(TestCase):
         # Set up method
     def setUp(self):
@@ -17,3 +18,11 @@ class JobTestClass(TestCase):
     # Testing  instance
     def test_instance(self):
         self.assertTrue(isinstance(self.abugajob,job))
+
+class PicturesTestClass(TestCase):
+        # Set up method
+    def setUp(self):
+        self.abugapics = pictures(title="rick", alt_tag="my first degree", image = "xyz")
+    # Testing  instance
+    def test_instance(self):
+        self.assertTrue(isinstance(self.abugapics,pictures))
