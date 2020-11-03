@@ -32,4 +32,4 @@ class pictures(models.Model):
     article_image = models.ImageField(upload_to = 'images/')
 
     def __str__(self):
-        return self.title
+        return self.title 
