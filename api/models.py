@@ -7,6 +7,17 @@ import uuid
 class education(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     title = models.CharField(max_length=20)
+    qualification = models.CharField(max_length=50)
+    description = models.TextField()
+    start = models.DateField(auto_now=False)
+    finish = models.DateField(auto_now=False)
+
+    def __str__(self):
+        return self.title
+
+class job(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    title = models.CharField(max_length=20)
     description = models.TextField()
     start = models.DateField(auto_now=False)
     finish = models.DateField(auto_now=False)
