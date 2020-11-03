@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models import Q
+import uuid
 
 # Create your models here.
 class education(models.Model):
