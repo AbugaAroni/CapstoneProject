@@ -33,3 +33,17 @@ class pictures(models.Model):
 
     def __str__(self):
         return self.title
+
+class user(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=20)
+    last_name = models.CharField(max_length=20)
+    admin = models.BooleanField(default=True)
+    about = models.TextField()
+    pictures = models.ManyToManyField(pictures)
+    education = models.ManyToManyField(education)
+    career = models.ManyToManyField(job)
+
+    def __str__(self):
+        return self.first_name
