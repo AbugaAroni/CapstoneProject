@@ -41,6 +41,12 @@ class UserTestClass(TestCase):
         self.abugaeducate.save()
 
         self.abugauser = user(user=self.abuga, first_name="Rick", last_name="ricardo", admin=True,about="Abuga is not rick")
+        self.abugauser.save()
+
+        self.abugauser.picturez.add(self.abugapics)
+        self.abugauser.educationz.add(self.abugaeducate)
+        self.abugauser.career.add(self.abugajob)
+
 
     def test_instance(self):
         self.assertTrue(isinstance(self.abugauser,user))
@@ -69,6 +75,9 @@ class ProjectTestClass(TestCase):
         self.abugauser.save()
 
         self.abugaproject = project(writer=self.abugauser, title="This is my firs project", description="blah blah blah blah", live_link="github.com")
+        self.abugaproject.save()
+
+        self.abugaproject.picturez.add(self.abugapics)
 
     def test_instance(self):
         self.assertTrue(isinstance(self.abugaproject,project))
@@ -84,6 +93,7 @@ class Blog_postTestClass(TestCase):
         self.abugauser.save()
 
         self.abugablog_post = blog_post(writer=self.abugauser, title="This is my firs project", content="blah blah blah blah")
-
+        self.abugablog_post.save()
+        self.abugablog_post.picturez.add(self.abugapics)
     def test_instance(self):
         self.assertTrue(isinstance(self.abugablog_post,blog_post))
