@@ -56,3 +56,14 @@ class contact(models.Model):
 
     def __str__(self):
         return self.user.first_name
+
+class project(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    writer = models.ForeignKey(user,on_delete=models.CASCADE)
+    title = models.CharField(max_length=50)
+    description = models.TextField()
+    live_link = models.CharField(max_length=50)
+    picturez = models.ManyToManyField(pictures)
+
+    def __str__(self):
+        return self.writer.first_name
