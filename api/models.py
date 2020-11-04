@@ -39,11 +39,20 @@ class user(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)
-    admin = models.BooleanField(default=True)
+    admin = models.BooleanField(default=False)
     about = models.TextField()
-    pictures = models.ManyToManyField(pictures)
-    education = models.ManyToManyField(education)
+    picturez = models.ManyToManyField(pictures)
+    educationz = models.ManyToManyField(education)
     career = models.ManyToManyField(job)
 
     def __str__(self):
         return self.first_name
+
+class contact(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    user = models.ForeignKey(user,on_delete=models.CASCADE)
+    email = models.EmailField()
+    phone = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.user.first_name
