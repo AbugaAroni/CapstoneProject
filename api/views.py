@@ -15,3 +15,7 @@ class JobView(viewsets.ModelViewSet):
 class PicturesView(viewsets.ModelViewSet):
     queryset = pictures.objects.all()
     serializer_class = PicturesSerializer
+
+class usersView(viewsets.ModelViewSet):
+    queryset = user.objects.all()
+    serializer_class = userSerializer
