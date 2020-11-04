@@ -67,3 +67,13 @@ class project(models.Model):
 
     def __str__(self):
         return self.writer.first_name
+
+class blog_post(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    writer = models.ForeignKey(user,on_delete=models.CASCADE)
+    title = models.CharField(max_length=50)
+    content = models.TextField()
+    picturez = models.ManyToManyField(pictures)
+
+    def __str__(self):
+        return self.writer.first_name
