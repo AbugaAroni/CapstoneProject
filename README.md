@@ -20,6 +20,9 @@ You can simply click the link if you want to view the published website below. Y
 Python3.6
 Django3.1.2
 
+### Limitations
+No authentication requirements built in. Anyone can access the API and change it. This will be sorted as soon as possible.
+
 ### Setup Instructions
 To view updates to the database and such in the relations, log in as an admin.
 You can log in with user- abuga, password-password
@@ -30,6 +33,6 @@ You will need to install the Dependencies from the requirements.txt file.
 Execute the command "python3.6 manage.py" whilst in the directory in your command line and you will be able to run the program.
 You will need a text editor to edit and view the code.
 
-### Link to the published site: [Neighbourhood Watch application by Abuga] (https://nwatchabuga.herokuapp.com/)
+### Link to the published site: [Capstone Project by Abuga] (https://abugaaronico.herokuapp.com/)
 
 ### License: [MIT] (https://github.com/AbugaAroni/Capstoneprojectapi/blob/main/LICENSE)
